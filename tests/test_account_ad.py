@@ -34,6 +34,7 @@ def create_chart(company, tax=False):
             ],
         limit=1)
     payable, = Account.search([
+            ('code', '=', '400'),
             ('type.payable', '=', True),
             ('company', '=', company.id),
             ],
