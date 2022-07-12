@@ -1,0 +1,185 @@
+<?xml version='1.0'?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+ <data grouped="1">
+        <record model="account.account.type.template" id="ad">
+            <field name="name">Plà general contable Andorrà</field>
+            <field name="sequence" eval="1"/>
+        </record>
+    </data>
+    <data grouped="1">
+        <record model="account.account.type.template" id="ad_pig">
+            <field name="name">Pèrdues i guanys</field>
+            <field name="parent" ref="ad"/>
+            <field name="sequence" eval="2"/>
+            <field name="statement">income</field>
+        </record>
+    </data>
+    <data grouped="1">
+        <record model="account.account.type.template" id="ad_pig_resultat">
+            <field name="name">Resultat del exercici</field>
+            <field name="parent" ref="ad_pig"/>
+            <field name="sequence" eval="50000"/>
+            <field name="statement">income</field>
+        </record>
+    </data>
+    <data grouped="1">
+        <record model="account.account.type.template" id="ad_pig_resultat_explotacio">
+            <field name="name">Resultat explotació</field>
+            <field name="parent" ref="ad_pig_resultat"/>
+            <field name="statement">income</field>
+        </record>
+        <record model="account.account.type.template" id="ad_pig_resultat_operacions">
+            <field name="name">Resultat de les operacions</field>
+            <field name="parent" ref="ad_pig_resultat"/>
+            <field name="statement">income</field>
+        </record>
+        <record model="account.account.type.template" id="ad_pig_resultat_impostos">
+            <field name="name">Resultat abans d'impostos</field>
+            <field name="parent" ref="ad_pig_resultat"/>
+            <field name="statement">income</field>
+        </record>
+    </data>
+    <data grouped="1">
+        <record model="account.account.type.template" id="ad_pig_I">
+            <field name="name">I. Ingressos d'explotació</field>
+            <field name="parent" ref="ad_pig_resultat_explotacio"/>
+            <field name="statement">income</field>
+        </record>
+        <record model="account.account.type.template" id="ad_pig_II">
+            <field name="name">II. Despeses D'explotació</field>
+            <field name="parent" ref="ad_pig_resultat_explotacio"/>
+            <field name="statement">income</field>
+        </record>
+        <record model="account.account.type.template" id="ad_pig_III">
+            <field name="name">III. Ingresos i Despeses financeres</field>
+            <field name="parent" ref="ad_pig_resultat_operacions"/>
+            <field name="statement">income</field>
+        </record>
+        <record model="account.account.type.template" id="ad_pig_IV">
+            <field name="name">IV Altres ingresos i despeses no recurrents</field>
+            <field name="parent" ref="ad_pig_resultat_impostos"/>
+            <field name="statement">income</field>
+        </record>
+        <record model="account.account.type.template" id="ad_pig_V">
+            <field name="name">V Impost sobre beneficis</field>
+            <field name="parent" ref="ad_pig_resultat"/>
+            <field name="statement">income</field>
+        </record>
+
+    </data>
+    <data grouped="1">
+        <!-- I Ingressos d'explotació -->
+        <record model="account.account.type.template" id="ad_pig_I1">
+            <field name="name">1. Import net de la xifra de negocis</field>
+            <field name="parent" ref="ad_pig_I"/>
+            <field name="sequence" eval="40100"/>
+            <field name="statement">income</field>
+            <field name="revenue" eval="True"/>
+        </record>
+        <record model="account.account.type.template" id="ad_pig_I2">
+            <field name="name">2.Variació d'existències de productes acabatrs i en curs de fabricació</field>
+            <field name="parent" ref="ad_pig_I"/>
+            <field name="sequence" eval="40200"/>
+            <field name="statement">income</field>
+            <field name="expense" eval="True"/>
+            <field name="revenue" eval="True"/>
+            <field name="stock" eval="True"/>
+        </record>
+        <record model="account.account.type.template" id="ad_pig_I3">
+            <field name="name">3. Treballs realitzats per l'empresari i per el seu immobilitzat</field>
+            <field name="parent" ref="ad_pig_I"/>
+            <field name="sequence" eval="40300"/>
+            <field name="statement">income</field>
+            <field name="revenue" eval="True"/>
+        </record>
+        <record model="account.account.type.template" id="ad_pig_I4">
+            <field name="name">4. Altres ingressos d'explotació</field>
+            <field name="parent" ref="ad_pig_I"/>
+            <field name="sequence" eval="40500"/>
+            <field name="statement">income</field>
+             <field name="revenue" eval="True"/>
+        </record>
+
+        <!-- II Despeses d'explotació -->
+       <record model="account.account.type.template" id="ad_pig_II1">
+            <field name="name">1. Consum de mercaderies, matèries primeres i altres materials</field>
+            <field name="parent" ref="ad_pig_II"/>
+            <field name="sequence" eval="40000"/>
+            <field name="statement">income</field>
+            <field name="expense" eval="True"/>
+            <field name="stock" eval="True"/>
+        </record>
+        <record model="account.account.type.template" id="ad_pig_II2">
+            <field name="name">2. Despeses de personal</field>
+            <field name="parent" ref="ad_pig_II"/>
+            <field name="sequence" eval="40100"/>
+            <field name="statement">income</field>
+            <field name="expense" eval="True"/>
+            <field name="revenue" eval="True"/>
+        </record>
+        <record model="account.account.type.template" id="ad_pig_II3">
+            <field name="name">3. Amortització, deteriorament, i resultats per venda o baixa de l'immobilitzat intangible i de l'immobilitat tangible</field>
+            <field name="parent" ref="ad_pig_II"/>
+            <field name="sequence" eval="40200"/>
+            <field name="statement">income</field>
+            <field name="expense" eval="True"/>
+        </record>
+        <record model="account.account.type.template" id="ad_pig_II4">
+            <field name="name">4. Deteriorament del circulant</field>
+            <field name="parent" ref="ad_pig_II"/>
+            <field name="sequence" eval="40300"/>
+            <field name="statement">income</field>
+            <field name="expense" eval="True"/>
+            <field name="revenue" eval="True"/>
+        </record>
+         <record model="account.account.type.template" id="ad_pig_II5">
+            <field name="name">5. Altres despeses d'explotació</field>
+            <field name="parent" ref="ad_pig_II"/>
+            <field name="sequence" eval="40400"/>
+            <field name="statement">income</field>
+            <field name="expense" eval="True"/>
+            <field name="revenue" eval="True"/>
+        </record>
+
+        <!-- III Ingressos i despeses financeres-->
+
+        <record model="account.account.type.template" id="ad_pig_III1">
+            <field name="name">1. Ingressos financiers</field>
+            <field name="parent" ref="ad_pig_III"/>
+            <field name="sequence" eval="41400"/>
+            <field name="statement">income</field>
+        </record>
+        <record model="account.account.type.template" id="ad_pig_III2">
+            <field name="name">2. Despeses financeres</field>
+            <field name="parent" ref="ad_pig_III"/>
+            <field name="sequence" eval="41500"/>
+            <field name="statement">income</field>
+        </record>
+        <record model="account.account.type.template" id="ad_pig_III3">
+            <field name="name">3. Variació de valor raonable en instruments financers de negoci</field>
+            <field name="parent" ref="ad_pig_III"/>
+            <field name="sequence" eval="41600"/>
+            <field name="statement">income</field>
+            <field name="revenue" eval="True"/>
+        </record>
+        <record model="account.account.type.template" id="ad_pig_III4">
+            <field name="name">4. Diferències de canvi</field>
+            <field name="parent" ref="ad_pig_III"/>
+            <field name="sequence" eval="41700"/>
+            <field name="statement">income</field>
+            <field name="expense" eval="True"/>
+            <field name="revenue" eval="True"/>
+        </record>
+        <record model="account.account.type.template" id="ad_pig_III5">
+            <field name="name">5.Deteriorament i resultats per venda o baixa d'aactius fianancers.</field>
+            <field name="parent" ref="ad_pig_III"/>
+            <field name="sequence" eval="41800"/>
+            <field name="statement">income</field>
+        </record>
+
+    </data>
+
+
+</tryton>

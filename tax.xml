@@ -1,0 +1,443 @@
+<?xml version='1.0'?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data grouped="1">
+        <record model="account.tax.group" id="tax_group_sale">
+            <field name="name">Vendes</field>
+            <field name="code">Vendes</field>
+            <field name="kind">sale</field>
+        </record>
+        <record model="account.tax.group" id="tax_group_purchase">
+            <field name="name">Compres</field>
+            <field name="code">Compres</field>
+            <field name="kind">purchase</field>
+        </record>
+        <record model="account.tax.group" id="tax_group_both">
+            <field name="name">Ambdós</field>
+            <field name="code">Ambdós</field>
+            <field name="kind">both</field>
+        </record>
+    </data>
+    <data>
+        <record model="account.tax.code.template" id="vat_code_chart_root">
+            <field name="name">Plantilla Pla d'impostos</field>
+            <field name="account" ref="pgc_0"/>
+        </record>
+    </data>
+    <data>
+     <record model="account.tax.code.template" id="vat_code_chart_base">
+        <field name="name">Bases</field>
+        <field name="parent" ref="vat_code_chart_root"/>
+        <field name="account" ref="pgc_0"/>
+    </record>
+    <record model="account.tax.code.template" id="vat_code_chart_cuota">
+        <field name="name">Cuotas</field>
+        <field name="parent" ref="vat_code_chart_root"/>
+        <field name="account" ref="pgc_0"/>
+    </record>
+    <record model="account.tax.code.template" id="irpf_base">
+        <field name="name">IRPF Retencions practicades</field>
+        <field name="parent" ref="vat_code_chart_base"/>
+        <field name="code">B.IRPF.P</field>
+        <field name="account" ref="pgc_0"/>
+    </record>
+    <record model="account.tax.code.template" id="irnr_base">
+        <field name="name">IRNR Retencions practicades</field>
+        <field name="parent" ref="vat_code_chart_base"/>
+        <field name="code">B.IRNR.P</field>
+        <field name="account" ref="pgc_0"/>
+    </record>
+     <record model="account.tax.code.template" id="irpf_cuota">
+        <field name="name">IRPF Retencions practicades</field>
+        <field name="parent" ref="vat_code_chart_cuota"/>
+        <field name="code">B.IRPF.P</field>
+        <field name="account" ref="pgc_0"/>
+    </record>
+    <record model="account.tax.code.template" id="irnr_cuota">
+        <field name="name">IRNR Retencions practicades</field>
+        <field name="parent" ref="vat_code_chart_cuota"/>
+        <field name="code">B.IRNR.P</field>
+        <field name="account" ref="pgc_0"/>
+    </record>
+    <record model="account.tax.code.template" id="igi_base">
+        <field name="name">IGI</field>
+        <field name="parent" ref="vat_code_chart_base"/>
+        <field name="account" ref="pgc_0"/>
+    </record>
+    <record model="account.tax.code.template" id="igi_cuota">
+        <field name="name">IGI</field>
+        <field name="parent" ref="vat_code_chart_cuota"/>
+        <field name="account" ref="pgc_0"/>
+    </record>
+
+   </data>
+
+    <data grouped="1">
+       <record model="account.tax.code.template" id="irpf_base_0">
+            <field name="name">IRPF Retencions practicades 1% (Base)</field>
+            <field name="parent" ref="irpf_base"/>
+            <field name="code">B.IRPF0.P</field>
+            <field name="account" ref="pgc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="irpf_base_5">
+            <field name="name">IRPF Retencions practicades 5% (Base)</field>
+            <field name="parent" ref="irpf_base"/>
+            <field name="code">B.IRPF5.P</field>
+            <field name="account" ref="pgc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="irpf_base_10">
+            <field name="name">IRPF Retencions practicades 10% (Base)</field>
+            <field name="parent" ref="irpf_base"/>
+            <field name="code">B.IRPF10.P</field>
+            <field name="account" ref="pgc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="irnr_base_10">
+            <field name="name">IRNR Retencions practicades 10% (Base)</field>
+            <field name="parent" ref="irnr_base"/>
+            <field name="code">B.IRNR10.P</field>
+            <field name="account" ref="pgc_0"/>
+        </record>
+         <record model="account.tax.code.template" id="irpf_cuota_0">
+            <field name="name">IRPF Retencions practicades 1% (Cuota)</field>
+            <field name="parent" ref="irpf_cuota"/>
+            <field name="code">B.IRPF0.P</field>
+            <field name="account" ref="pgc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="irpf_cuota_5">
+            <field name="name">IRPF Retencions practicades 5% (Cuota)</field>
+            <field name="parent" ref="irpf_cuota"/>
+            <field name="code">B.IRPF5.P</field>
+            <field name="account" ref="pgc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="irpf_cuota_10">
+            <field name="name">IRPF Retencions practicades 10% (Cuota)</field>
+            <field name="parent" ref="irpf_cuota"/>
+            <field name="code">B.IRPF10.P</field>
+            <field name="account" ref="pgc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="irnr_cuota_10">
+            <field name="name">IRNR Retencions practicades 10% (Cuota)</field>
+            <field name="parent" ref="irnr_cuota"/>
+            <field name="code">B.IRNR10.P</field>
+            <field name="account" ref="pgc_0"/>
+        </record>
+
+        <record model="account.tax.code.template" id="igi_sop_45_base">
+            <field name="name">IGI SOP 45 (BASE) </field>
+            <field name="parent" ref="igi_base"/>
+            <field name="code">IGI_SOP_45_BASE</field>
+            <field name="account" ref="pgc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="igi_sop_45_cuota">
+            <field name="name">IGI SOP 45 (Cuota) </field>
+            <field name="parent" ref="igi_cuota"/>
+            <field name="code">IGI_SOP_45_CUTOA</field>
+            <field name="account" ref="pgc_0"/>
+        </record>
+
+        <record model="account.tax.code.template" id="igi_rep_45_base">
+            <field name="name">IGI REP 45 (BASE) </field>
+            <field name="parent" ref="igi_base"/>
+            <field name="code">IGI_REP_45_BASE</field>
+            <field name="account" ref="pgc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="igi_rep_45_cuota">
+            <field name="name">IGI REP 45 (Cuota) </field>
+            <field name="parent" ref="igi_cuota"/>
+            <field name="code">IGI_REP_45_CUTOA</field>
+            <field name="account" ref="pgc_0"/>
+        </record>
+
+        <record model="account.tax.code.template" id="igi_sop_1_base">
+            <field name="name">IGI SOP 1 (BASE) </field>
+            <field name="parent" ref="igi_base"/>
+            <field name="code">IGI_SOP_1_BASE</field>
+            <field name="account" ref="pgc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="igi_sop_1_cuota">
+            <field name="name">IGI SOP 1 (Cuota) </field>
+            <field name="parent" ref="igi_cuota"/>
+            <field name="code">IGI_SOP_1_CUTOA</field>
+            <field name="account" ref="pgc_0"/>
+        </record>
+
+        <record model="account.tax.code.template" id="igi_rep_1_base">
+            <field name="name">IGI REP 1 (BASE) </field>
+            <field name="parent" ref="igi_base"/>
+            <field name="code">IGI_REP_1_BASE</field>
+            <field name="account" ref="pgc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="igi_rep_1_cuota">
+            <field name="name">IGI REP 1 (Cuota) </field>
+            <field name="parent" ref="igi_cuota"/>
+            <field name="code">IGI_REP_1_CUTOA</field>
+            <field name="account" ref="pgc_0"/>
+        </record>
+    </data>
+
+    <data grouped="1">
+        <record model="account.tax.template" id="irpf_0">
+            <field name="name">Retencions IRPF O%</field>
+            <field name="description">Retencions IRPF 0%</field>
+            <field name="account" ref="pgc_0"/>
+            <field name="type">percentage</field>
+            <field name="rate" eval="Decimal('-0.00')"/>
+            <field name="invoice_account" ref="pgc_475_child"/>
+            <field name="credit_note_account" ref="pgc_475_child"/>
+            <field name="sequence" eval="2530"/>
+        </record>
+        <record model="account.tax.template" id="irpf_5">
+            <field name="name">Retencions IRPF 5%</field>
+            <field name="description">Retencions IRPF 5%</field>
+            <field name="account" ref="pgc_0"/>
+            <field name="type">percentage</field>
+            <field name="rate" eval="Decimal('-0.05')"/>
+            <field name="invoice_account" ref="pgc_475_child"/>
+            <field name="credit_note_account" ref="pgc_475_child"/>
+            <field name="sequence" eval="2520"/>
+        </record>
+        <record model="account.tax.template" id="irpf_10">
+            <field name="name">Retencions IRPF 7%</field>
+            <field name="description">Retencions IRPF 7%</field>
+            <field name="account" ref="pgc_0"/>
+            <field name="type">percentage</field>
+            <field name="rate" eval="Decimal('-0.010')"/>
+            <field name="invoice_account" ref="pgc_475_child"/>
+            <field name="credit_note_account" ref="pgc_475_child"/>
+            <field name="sequence" eval="2540"/>
+        </record>
+        <record model="account.tax.template" id="irnr_10">
+            <field name="name">Retencions IRNR 10%</field>
+            <field name="description">Retencions IRNR 10%</field>
+            <field name="account" ref="pgc_0"/>
+            <field name="type">percentage</field>
+            <field name="rate" eval="Decimal('-0.10')"/>
+            <field name="invoice_account" ref="pgc_475_child"/>
+            <field name="credit_note_account" ref="pgc_475_child"/>
+            <field name="sequence" eval="2500"/>
+        </record>
+
+        <record model="account.tax.template" id="igi_rep_45">
+            <field name="name">IGI 4.5%</field>
+            <field name="description">IGI 5.4%</field>
+            <field name="account" ref="pgc_0"/>
+            <field name="group" ref="tax_group_sale"/>
+            <field name="type">percentage</field>
+            <field name="rate" eval="Decimal('0.045')"/>
+            <field name="invoice_account" ref="pgc_477_child"/>
+            <field name="credit_note_account" ref="pgc_477_child"/>
+            <field name="sequence" eval="1020"/>
+        </record>
+        <record model="account.tax.template" id="igi_rep_1">
+            <field name="name">IGI 1%</field>
+            <field name="description">IGI 1%</field>
+            <field name="account" ref="pgc_0"/>
+            <field name="group" ref="tax_group_sale"/>
+            <field name="type">percentage</field>
+            <field name="rate" eval="Decimal('0.01')"/>
+            <field name="invoice_account" ref="pgc_477_child"/>
+            <field name="credit_note_account" ref="pgc_477_child"/>
+            <field name="sequence" eval="1020"/>
+        </record>
+         <record model="account.tax.template" id="igi_sop_45">
+            <field name="name">IGI 4.5%</field>
+            <field name="description">IGI 5.4%</field>
+            <field name="account" ref="pgc_0"/>
+            <field name="group" ref="tax_group_purchase"/>
+            <field name="type">percentage</field>
+            <field name="rate" eval="Decimal('0.045')"/>
+            <field name="invoice_account" ref="pgc_472_child"/>
+            <field name="credit_note_account" ref="pgc_472_child"/>
+            <field name="sequence" eval="1020"/>
+        </record>
+        <record model="account.tax.template" id="igi_sop_1">
+            <field name="name">IGI 1%</field>
+            <field name="description">IGI 1%</field>
+            <field name="account" ref="pgc_0"/>
+            <field name="group" ref="tax_group_purchase"/>
+            <field name="type">percentage</field>
+            <field name="rate" eval="Decimal('0.01')"/>
+            <field name="invoice_account" ref="pgc_472_child"/>
+            <field name="credit_note_account" ref="pgc_472_child"/>
+            <field name="sequence" eval="1020"/>
+        </record>
+    </data>
+
+    <data grouped="1">
+        <record model="account.tax.code.line.template" id="irpf_0-irpf_base_0-invoice-base">
+            <field name="code" ref="irpf_base_0"/>
+            <field name="tax" ref="irpf_0"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="irpf_0-irpf_cuota_0-invoice-tax">
+            <field name="code" ref="irpf_cuota_0"/>
+            <field name="tax" ref="irpf_0"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">tax</field>
+        </record>
+        <record model="account.tax.code.line.template" id="irpf_5-irpf_base_5-invoice-base">
+            <field name="code" ref="irpf_base_5"/>
+            <field name="tax" ref="irpf_5"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="irpf_5-irpf_cuota_5-invoice-tax">
+            <field name="code" ref="irpf_cuota_5"/>
+            <field name="tax" ref="irpf_5"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">tax</field>
+        </record>
+         <record model="account.tax.code.line.template" id="irpf_10-irpf_base_10-invoice-base">
+            <field name="code" ref="irpf_base_10"/>
+            <field name="tax" ref="irpf_10"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="irpf_10-irpf_cuota_10-invoice-tax">
+            <field name="code" ref="irpf_cuota_10"/>
+            <field name="tax" ref="irpf_10"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">tax</field>
+        </record>
+         <record model="account.tax.code.line.template" id="irnr_10-irnr_base_10-invoice-base">
+            <field name="code" ref="irnr_base_10"/>
+            <field name="tax" ref="irnr_10"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="irnr_10-irnr_cuota_10-invoice-tax">
+            <field name="code" ref="irnr_cuota_10"/>
+            <field name="tax" ref="irnr_10"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">tax</field>
+        </record>
+
+        <record model="account.tax.code.line.template" id="igi_sop_45-igi_sop_45_base-invoice-base">
+            <field name="code" ref="igi_sop_45_base"/>
+            <field name="tax" ref="igi_sop_45"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="igi_sop_45-igi_sop_45_cuota-invoice-tax">
+            <field name="code" ref="igi_sop_45_cuota"/>
+            <field name="tax" ref="igi_sop_45"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">tax</field>
+        </record>
+        <record model="account.tax.code.line.template" id="igi_sop_45-igi_sop_45_base-credit-base">
+            <field name="code" ref="igi_sop_45_base"/>
+            <field name="tax" ref="igi_sop_45"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="igi_sop_45-igi_sop_45_cuota-credit-tax">
+            <field name="code" ref="igi_sop_45_cuota"/>
+            <field name="tax" ref="igi_sop_45"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">tax</field>
+        </record>
+
+        <record model="account.tax.code.line.template" id="igi_sop_1-igi_sop_1_base-invoice-base">
+            <field name="code" ref="igi_sop_1_base"/>
+            <field name="tax" ref="igi_sop_1"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="igi_sop_1-igi_sop_1_cuota-invoice-tax">
+            <field name="code" ref="igi_sop_1_cuota"/>
+            <field name="tax" ref="igi_sop_1"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">tax</field>
+        </record>
+        <record model="account.tax.code.line.template" id="igi_sop_1-igi_sop_1_base-credit-base">
+            <field name="code" ref="igi_sop_1_base"/>
+            <field name="tax" ref="igi_sop_1"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="igi_sop_1-igi_sop_1_cuota-credit-tax">
+            <field name="code" ref="igi_sop_1_cuota"/>
+            <field name="tax" ref="igi_sop_1"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">tax</field>
+        </record>
+
+        <record model="account.tax.code.line.template" id="igi_rep_45-igi_rep_45_base-invoice-base">
+            <field name="code" ref="igi_rep_45_base"/>
+            <field name="tax" ref="igi_rep_45"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="igi_rep_45-igi_rep_45_cuota-invoice-tax">
+            <field name="code" ref="igi_rep_45_cuota"/>
+            <field name="tax" ref="igi_rep_45"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">tax</field>
+        </record>
+        <record model="account.tax.code.line.template" id="igi_rep_45-igi_rep_45_base-credit-base">
+            <field name="code" ref="igi_rep_45_base"/>
+            <field name="tax" ref="igi_rep_45"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="igi_rep_45-igi_rep_45_cuota-credit-tax">
+            <field name="code" ref="igi_rep_45_cuota"/>
+            <field name="tax" ref="igi_rep_45"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">tax</field>
+        </record>
+
+        <record model="account.tax.code.line.template" id="igi_rep_1-igi_rep_1_base-invoice-base">
+            <field name="code" ref="igi_rep_1_base"/>
+            <field name="tax" ref="igi_rep_1"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="igi_rep_1-igi_rep_1_cuota-invoice-tax">
+            <field name="code" ref="igi_rep_1_cuota"/>
+            <field name="tax" ref="igi_rep_1"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">tax</field>
+        </record>
+        <record model="account.tax.code.line.template" id="igi_rep_1-igi_rep_1_base-credit-base">
+            <field name="code" ref="igi_rep_1_base"/>
+            <field name="tax" ref="igi_rep_1"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="igi_rep_1-igi_rep_1_cuota-credit-tax">
+            <field name="code" ref="igi_rep_1_cuota"/>
+            <field name="tax" ref="igi_rep_1"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">tax</field>
+        </record>
+
+
+    </data>
+</tryton>
