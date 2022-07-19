@@ -1,16 +1,9 @@
 # This file is part account_ad module for Tryton.
 # The COPYRIGHT file at the top level of this repository contains
 # the full copyright notices and license terms.
-import unittest
-
-
-from trytond.tests.test_tryton import ModuleTestCase
 from trytond.tests.test_tryton import ModuleTestCase, with_transaction
-from trytond.tests.test_tryton import suite as test_suite
 from trytond.modules.company.tests import create_company, set_company
 from trytond.pool import Pool
-
-
 
 
 def create_chart(company, tax=False):
@@ -45,7 +38,6 @@ def create_chart(company, tax=False):
     create_chart.transition_create_properties()
 
 
-
 class AccountAdTestCase(ModuleTestCase):
     'Test Account Ad module'
     module = 'account_ad'
@@ -57,8 +49,4 @@ class AccountAdTestCase(ModuleTestCase):
         with set_company(company):
             create_chart(company, tax=True)
 
-def suite():
-    suite = test_suite()
-    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(
-            AccountAdTestCase))
-    return suite
+del ModuleTestCase
