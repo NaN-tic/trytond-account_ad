@@ -2751,7 +2751,6 @@ this repository contains the full copyright notices and license terms. -->
             <field name="code">163</field>
             <field name="type" ref="ad_balanc_passiu_BIII"/>
         </record>
-
         <record model="account.account.template" id="pgc_170_child">
             <field name="name">Deutes a llarg termini amb entitats de crèdit</field>
             <field name="parent" ref="pgc_170"/>
@@ -3462,7 +3461,6 @@ this repository contains the full copyright notices and license terms. -->
             <field name="code">440</field>
             <field name="type" ref="ad_balanc_actiu_BIII3"/>
             <field name="party_required" eval="True"/>
-
         </record>
         <record model="account.account.template" id="pgc_441_child">
             <field name="name">Deutors, efectes comercials a cobrar</field>
@@ -3478,7 +3476,6 @@ this repository contains the full copyright notices and license terms. -->
             <field name="type" ref="ad_balanc_actiu_BIII3"/>
             <field name="party_required" eval="True"/>
         </record>
-
         <record model="account.account.template" id="pgc_460_child">
             <field name="name">Bestretes de remuneracions</field>
             <field name="parent" ref="pgc_460"/>
@@ -3507,7 +3504,6 @@ this repository contains the full copyright notices and license terms. -->
             <field name="type" ref="ad_balanc_actiu_BIII3"/>
             <field name="reconcile" eval="True"/>
         </record>
-
         <record model="account.account.template" id="pgc_472_child">
             <field name="name">Administracions públiques, impost indirecte suportat</field>
             <field name="parent" ref="pgc_472"/>
@@ -3561,7 +3557,6 @@ this repository contains the full copyright notices and license terms. -->
             <field name="parent" ref="pgc_480"/>
             <field name="code">480</field>
             <field name="type" ref="ad_balanc_actiu_BVI"/>
-
         </record>
         <record model="account.account.template" id="pgc_485_child">
             <field name="name">Ingresos anticipats</field>
@@ -3699,7 +3694,6 @@ this repository contains the full copyright notices and license terms. -->
             <field name="code">533</field>
             <field name="type" ref="ad_balanc_actiu_BIV1"/>
         </record>
-
         <record model="account.account.template" id="pgc_535_child">
             <field name="name">Dividend a cobrar d'inversions financeres en parts vinculades</field>
             <field name="parent" ref="pgc_535"/>
@@ -3767,7 +3761,6 @@ this repository contains the full copyright notices and license terms. -->
             <field name="code">552</field>
             <field name="type" ref="ad_balanc_passiu_CIII4"/>
         </record>
-
         <record model="account.account.template" id="pgc_554_child">
             <field name="name">Compte corrent amb unions temporals d'empreses i comunitats de béns</field>
             <field name="parent" ref="pgc_554"/>
@@ -3792,7 +3785,6 @@ this repository contains the full copyright notices and license terms. -->
             <field name="code">557</field>
             <field name="type" ref="ad_balanc_passiu_AVII"/>
         </record>
-
         <record model="account.account.template" id="pgc_560_child">
             <field name="name">Fiances rebudes a curt termini</field>
             <field name="parent" ref="pgc_560"/>
@@ -4105,7 +4097,6 @@ this repository contains the full copyright notices and license terms. -->
             <field name="code">631</field>
             <field name="type" ref="ad_pig_II5"/>
         </record>
-
         <record model="account.account.template" id="pgc_640_child">
             <field name="name">Sous i salaris assalariats</field>
             <field name="parent" ref="pgc_640"/>
@@ -4136,7 +4127,6 @@ this repository contains the full copyright notices and license terms. -->
             <field name="code">644</field>
             <field name="type" ref="ad_pig_II2"/>
         </record>
-
         <record model="account.account.template" id="pgc_649_child">
             <field name="name">Altres despeses socials</field>
             <field name="parent" ref="pgc_649"/>
@@ -4617,6 +4607,22 @@ this repository contains the full copyright notices and license terms. -->
             <field name="code">799</field>
             <field name="type" ref="ad_pig_III5"/>
         </record>
-
+    </data>
+    <data grouped="1">
+        <record model="account.account.template" id="pgc_2817_child">
+            <field name="name">Amortització acumulada d'equips per procés d'informació</field>
+            <field name="parent" ref="pgc_2817"/>
+            <field name="code">2817</field>
+            <field name="type" ref="ad_balanc_actiu_AII1"/>
+            <field name="party_required" eval="False"/>
+        </record>
+        <record model="account.account.template" id="pgc_4751_child">
+            <field name="name">Administracions públiques, creditores per retencions practicades</field>
+            <field name="parent" ref="pgc_4751"/>
+            <field name="code">4751</field>
+            <field name="type" ref="ad_balanc_actiu_BIII3"/>
+            <field name="party_required" eval="False"/>
+            <field name="reconcile" eval="True"/>
+        </record>
     </data>
 </tryton>
