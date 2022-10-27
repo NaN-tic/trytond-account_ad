@@ -2569,7 +2569,20 @@ this repository contains the full copyright notices and license terms. -->
             <field name="parent" ref="pgc_79"/>
             <field name="code">799</field>
         </record>
-
+    </data>
+    <data grouped="1">
+        <record model="account.account.template" id="pgc_2817">
+            <field name="name">Amortització acumulada d'equips per procés d'informació</field>
+            <field name="parent" ref="pgc_281"/>
+            <field name="code">2817</field>
+            <field name="party_required" eval="False"/>
+        </record>
+        <record model="account.account.template" id="pgc_4751">
+            <field name="name">Administracions públiques, creditores per retencions practicades</field>
+            <field name="parent" ref="pgc_475"/>
+            <field name="code">4751</field>
+            <field name="party_required" eval="False"/>
+        </record>
     </data>
     <data grouped="1">
         <record model="account.account.template" id="pgc_100_child">
